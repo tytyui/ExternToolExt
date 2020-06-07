@@ -3,7 +3,6 @@
   "displayname": "ExternTool Extension",
   "version": "0.0.1",
   "description": "Unity3D外部工具扩展",
-  "main": "index.js",
   "unity": "2019.3",
   "scripts": {
 	"version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
