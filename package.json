@@ -1,0 +1,35 @@
+{
+  "name": "com.spadeace.externtoolext",
+  "displayname": "ExternTool Extension",
+  "version": "0.0.1",
+  "description": "Unity3D外部工具扩展",
+  "main": "index.js",
+  "unity": "2019.3",
+  "scripts": {
+	"changelog": "conventional-changelog -p angular -i CHANGELOG.md -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:spadeace/ExternToolExt.git"
+  },
+  "keywords": [
+    "Unity",
+    "3D",
+    "Extern",
+    "Tool",
+    "Extension",
+    "外部工具",
+    "工具",
+    "扩展"
+  ],
+  "author": "SpadeAce",
+  "license": "MIT",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
