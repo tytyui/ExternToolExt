@@ -1,4 +1,4 @@
-## [0.0.1-prerelease](https://gitee.com/spadeace/ExternToolExt/compare/0.0.1...0.0.1-prerelease) (2020-06-08)
+## [0.0.2-prerelease](https://gitee.com/spadeace/ExternToolExt/compare/0.0.1...0.0.2-prerelease) (2020-06-08)
 
 
 ### Features
