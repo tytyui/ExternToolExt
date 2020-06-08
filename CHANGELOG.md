@@ -1,10 +1,18 @@
-## 0.0.1 (2020-06-07)
+## [0.0.1-prerelease](https://gitee.com/spadeace/ExternToolExt/compare/0.0.1...0.0.1-prerelease) (2020-06-08)
 
 
 ### Features
 
-* pre release for test ([6862705](https://gitee.com/spadeace/ExternToolExt/commits/68627050d3c9255da3be21ab3f60bd7aa7e5645d))
-* 添加 自定义文件打开方式 ([6bc4068](https://gitee.com/spadeace/ExternToolExt/commits/6bc40688344575d10026e76e10c8c1b3ca0a06ae))
+* **editor:** added muliti extension support ([fdf55d6](https://gitee.com/spadeace/ExternToolExt/commits/fdf55d60cfff0ec65c2aa7ca0c17ec91ac335fb5))
+
+
+
+## [0.0.1](https://gitee.com/spadeace/ExternToolExt/compare/7cc7050af248a3dbe6dfd6e670e9497c8b981360...0.0.1) (2020-06-07)
+
+
+### Features
+
+* **editor:** added Unity Preference Panel ([7cc7050](https://gitee.com/spadeace/ExternToolExt/commits/7cc7050af248a3dbe6dfd6e670e9497c8b981360))
 
 
 
