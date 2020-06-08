@@ -21,6 +21,8 @@ namespace SpadeAce
         [OnOpenAsset(2)]
         public static bool OpenFile(int instanceID, int line, int column)
         {
+            if (asset == null)
+                return false;
             string filePath = AssetDatabase.GetAssetPath(instanceID);
             string extension = Path.GetExtension(filePath);
             extension = extension.TrimStart('.');

@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace SpadeAce
 {
@@ -18,21 +18,34 @@ namespace SpadeAce
         
         public string GetPath(string extension)
         {
-            for (int i = 0; i < items.Count; ++i)
-            {
-                string[] exts = items[i].extension.Split(';');
-                for (int j = 0; j < exts.Length; ++j)
+            string path = null;
+            ForEach((ext, extPath) => {
+                if(ext == extension)
                 {
-                    if (exts[j] == extension)
-                        return items[i].path;
+                    path = extPath;
+                    return false;
                 }
-            }
-            return null;
+                return true;
+            });
+            return path;
         }
 
         public bool Contains(string extension)
         {
             return !string.IsNullOrWhiteSpace(GetPath(extension));
+        }
+
+        public void ForEach(Func<string, string, bool> onForEach)
+        {
+            for (int i = 0; i < items.Count; ++i)
+            {
+                string[] exts = items[i].extension.Split(';');
+                for (int j = 0; j < exts.Length; ++j)
+                {
+                    if (!onForEach(exts[i], items[i].path))
+                        return;
+                }
+            }
         }
 
         public static ExternToolAsset Load(string assetPath)
@@ -68,10 +81,10 @@ namespace SpadeAce
         }
     }
 
-    [System.Serializable]
+    [Serializable]
     internal class ExternToolItem
     {
-        public string extension;
-        public string path;
+        public string extension = null;
+        public string path = null;
     }
 }
