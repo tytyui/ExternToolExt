@@ -1,12 +1,12 @@
 {
   "name": "com.spadeace.externtoolext",
   "displayName": "ExternTool Extension",
-  "version": "0.0.1-prerelease",
+  "version": "0.0.1",
   "description": "Unity3D外部工具扩展",
   "category": "tool",
   "unity": "2019.3",
   "scripts": {
-	"version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "repository": {
     "type": "git",
