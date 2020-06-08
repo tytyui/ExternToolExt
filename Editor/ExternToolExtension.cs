@@ -23,6 +23,7 @@ namespace SpadeAce
         {
             string filePath = AssetDatabase.GetAssetPath(instanceID);
             string extension = Path.GetExtension(filePath);
+            extension = extension.TrimStart('.');
             string exePath = asset.GetPath(extension);
             if(!string.IsNullOrWhiteSpace(exePath))
             {

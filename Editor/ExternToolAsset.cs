@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SpadeAce
 {
@@ -14,25 +15,24 @@ namespace SpadeAce
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
         }
-
+        
         public string GetPath(string extension)
         {
             for (int i = 0; i < items.Count; ++i)
             {
-                if (extension == items[i].extension)
-                    return items[i].path;
+                string[] exts = items[i].extension.Split(';');
+                for (int j = 0; j < exts.Length; ++j)
+                {
+                    if (exts[j] == extension)
+                        return items[i].path;
+                }
             }
             return null;
         }
 
         public bool Contains(string extension)
         {
-            for (int i = 0; i < items.Count; ++i)
-            {
-                if (extension == items[i].extension)
-                    return true;
-            }
-            return false;
+            return !string.IsNullOrWhiteSpace(GetPath(extension));
         }
 
         public static ExternToolAsset Load(string assetPath)

@@ -48,7 +48,10 @@ namespace SpadeAce
             EditorGUI.LabelField(extRect, "扩展名");
             extRect.x += extRect.width;
             extRect.width = 100;
+            EditorGUI.BeginChangeCheck();
             EditorGUI.PropertyField(extRect, ext, GUIContent.none);
+            if (EditorGUI.EndChangeCheck())
+                ext.stringValue = ReognizeExtInput(ext.stringValue);
             Rect extPathRect = rect;
             extPathRect.width = 48;
             extPathRect.y += extPathRect.height + 2;
@@ -97,6 +100,18 @@ namespace SpadeAce
             serializedObject.Update();
             list.DoLayoutList();
             serializedObject.ApplyModifiedProperties();
+        }
+
+        private string ReognizeExtInput(string input)
+        {
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                string[] inputs = input.Split(';');
+                for (int i = 0; i < inputs.Length; ++i)
+                    inputs[i] = inputs[i].Trim();
+                return string.Join(";", inputs);
+            }
+            return input;
         }
 
         private void ForEachItem(SerializedProperty items, UnityAction<int, SerializedProperty, SerializedProperty> onForEach)
